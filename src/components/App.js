@@ -3,6 +3,7 @@ import MainTitle from './MainTitle';
 import CardList from './CardList';
 import Search from './Search';
 import Loader from './Loader';
+import ErrorBoundary from './ErrorBoundary';
 import '../css/App.css'
 
 const App = () => {
@@ -42,13 +43,14 @@ const App = () => {
             </div>
             {isLoading ? <Loader/> : 
                 <div className={'container'}>
-                    <CardList robots = { robotsState.filter(user => {
-                            return user.name.toLowerCase().includes(searchTerm.toLowerCase())
-                        })
-                    } />
+                    <ErrorBoundary>
+                        <CardList robots = { robotsState.filter(user => {
+                                return user.name.toLowerCase().includes(searchTerm.toLowerCase())
+                            })
+                        } />
+                   </ErrorBoundary>
                 </div>
             }
-           
         </div>
     )
 }

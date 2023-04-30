@@ -30,3 +30,8 @@
     background: linear-gradient(93deg, rgb(10 45 110 / 75%) 0%, rgb(14 124 115 / 75%) 100%);
     border-bottom: solid 1px #0b2d5a;
 }
+
+.error-message {
+    font-family: monospace;
+    color: white;
+}
